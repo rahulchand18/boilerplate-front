@@ -40,6 +40,7 @@ export class AuthService {
     }
 
     setAccessToken(token: string): void {
+        console.log(token);
         return this.localStorageService.setLocalStorageData(LOCAL_STORAGE_CONSTANT.token, token);
     }
 

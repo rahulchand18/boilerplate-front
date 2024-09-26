@@ -37,6 +37,7 @@
                                     <input matInput formControlName="email" />
 
                                     <mat-error *ngIf="submitted && loginForm.controls['email'].hasError('required')"> Email is <strong>required</strong> </mat-error>
+                                    <mat-error *ngIf="submitted && loginForm.controls['email'].hasError('email')"> Enter a valid Email </mat-error>
                                 </mat-form-field>
                                 <mat-form-field class="input-light" appearance="outline">
                                     <mat-label>Password</mat-label>

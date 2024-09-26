@@ -1,5 +1,6 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -14,7 +15,7 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    font-family: 'Palanquin', sans-serif;
     letter-spacing: normal;
 }
 .overlay {

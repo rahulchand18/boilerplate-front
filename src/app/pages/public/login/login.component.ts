@@ -25,7 +25,7 @@ export class LoginComponent {
 
     createLoginForm() {
         this.loginForm = this.fb.group({
-            email: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]
         });
     }
@@ -39,16 +39,11 @@ export class LoginComponent {
         this.authService.login(value).subscribe({
             next: (res: any) => {
                 this.invalidData = false;
-                const { user, accessToken } = res;
+                const { user, accessToken } = res.data;
                 if (accessToken) {
                     this.authService.setAccessToken(accessToken);
-                    const userData = {
-                        email: user.email,
-                        userType: user.userType,
-                        fullName: user.firstName + ' ' + user.lastName,
-                        img: user.img
-                    };
-                    this.authService.setUserData(userData);
+
+                    // this.authService.setUserData(userData);
                 }
                 this.userData = this.authService.getUserData();
                 const returnURL = this.activatedRoute.snapshot.queryParams['returnUrl'];

@@ -3,7 +3,7 @@ import { AuthService } from 'src/app/core/auth/auth.service';
 
 @Component({
     selector: 'app-private',
-    template: '<router-outlet></router-outlet>'
+    template: '<app-toolbar/><router-outlet></router-outlet>'
 })
 export class PrivateComponent {
     isLoggedIn = false;
