@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  apiURL: 'https://amsback.javra.com',
-  baseUrl: 'https://amsback.javra.com',
+    production: true,
+    apiURL: 'https://amsback.javra.com',
+    baseUrl: 'https://amsback.javra.com'
 };
 
 /*

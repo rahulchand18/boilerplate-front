@@ -4,25 +4,23 @@ import { PageNotFoundComponent } from './pages/public/page-not-found/page-not-fo
 import { LoginGuard } from './core/guards/login.guard';
 
 const routes: Routes = [
-  {
-    path: 'u',
-    loadChildren: async () =>
-      (await import('./pages/private/private.module')).PrivateModule,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: '',
-    loadChildren: async () =>
-      (await import('./pages/public/public.module')).PublicModule,
-  },
-  {
-    path: '**',
-    component: PageNotFoundComponent,
-  },
+    {
+        path: 'u',
+        loadChildren: async () => (await import('./pages/private/private.module')).PrivateModule,
+        canActivate: [LoginGuard]
+    },
+    {
+        path: '',
+        loadChildren: async () => (await import('./pages/public/public.module')).PublicModule
+    },
+    {
+        path: '**',
+        component: PageNotFoundComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule {}

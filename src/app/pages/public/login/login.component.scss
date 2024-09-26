@@ -1,43 +1,141 @@
-.login-form-container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  // align-items: center;
-  text-align: center;
-  .example-card {
+.p-5 {
+    @media (max-width: 575.98px) {
+        padding: 30px !important;
+    }
+}
+
+a {
+    color: #109c68;
+}
+
+.error {
+    color: orangered;
+    font-size: 13px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.strip {
+    display: block;
+    width: 12px;
+    height: 500px;
     position: absolute;
-    top: 20%;
+    border-radius: 50px;
+    z-index: 2;
+
+    &-0 {
+        background-color: #109c68;
+        transform: rotate(36deg) translate(50%, -60%);
+        top: 55px;
+        left: 40%;
+        margin-top: 20px;
+
+        @media (max-width: 767.98px) {
+            left: 50%;
+        }
+    }
+    &-1 {
+        background-color: #ffae00;
+        transform: rotate(36deg) translate(50%, -70%);
+        top: 0;
+        left: 40%;
+        margin-top: 40px;
+
+        @media (max-width: 767.98px) {
+            left: 50%;
+        }
+    }
+    &-2 {
+        background-color: #2d2d2d;
+        transform: rotate(36deg) translate(50%, -80%);
+        top: 0;
+        left: 40%;
+        margin-top: 60px;
+
+        @media (max-width: 767.98px) {
+            left: 50%;
+        }
+    }
+}
+
+.bubble {
+    display: block;
+    border-radius: 100%;
+    position: absolute;
+    background-color: #109c68;
     z-index: 1;
-  }
-  background-image: url('../../../../assets/images/ipl.jpg');
-  background-size: cover;
+
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+
+    &-0 {
+        opacity: 5%;
+        width: 400px;
+        height: 400px;
+    }
+    &-1 {
+        opacity: 10%;
+        width: 200px;
+        height: 200px;
+    }
+    &-2 {
+        opacity: 15%;
+        width: 100px;
+        height: 100px;
+    }
 }
 
-/* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version. */
-mat-card-header {
-  display: block;
-}
-.ams-logo {
-  margin: 20px;
-}
-mat-form-field {
-  display: flex;
-}
-::ng-deep.mat-mdc-form-field-infix {
-  display: flex;
-  padding: 5px;
-  mat-icon {
-    margin: 0 10px 0 0;
-    color: rgba(0, 0, 0, 0.224);
-  }
-}
-::ng-deep.mat-mdc-text-field-wrapper {
-  background-color: #fff;
+form {
+    position: relative;
+    z-index: 3;
 }
 
-.loader {
-  border: 2px solid black;
+::ng-deep {
+    .mat-mdc-unelevated-button.mat-primary {
+        background-color: #109c68 !important;
+    }
 }
-.border-radius{
-  border-radius: 15px !important
+
+input:-webkit-autofill {
+    -webkit-background-clip: text;
+}
+
+.applications {
+    .mdc-fab {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        box-shadow: none;
+        border: 1px solid #109c68;
+        background-color: white;
+        color: #109c68;
+
+        .mat-mdc-button-touch-target {
+            border-radius: 12px;
+        }
+    }
+}
+
+.mat-mdc-form-field {
+    background-color: white;
+    border-radius: 3px;
+}
+
+::ng-deep {
+    app-login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: 768px) {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        background-color: #ddeae5;
+    }
 }

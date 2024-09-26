@@ -7,17 +7,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MATERIAL_MODULE } from 'src/app/core/constants/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [LoginComponent, PageNotFoundComponent, RegisterComponent],
-  imports: [
-    CommonModule,
-    PublicRoutingModule,
-    ...MATERIAL_MODULE,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-  ],
+    declarations: [LoginComponent, PageNotFoundComponent],
+    imports: [CommonModule, PublicRoutingModule, ...MATERIAL_MODULE, FormsModule, ReactiveFormsModule, HttpClientModule]
 })
 export class PublicModule {}

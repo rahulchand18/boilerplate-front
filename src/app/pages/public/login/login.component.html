@@ -1,45 +1,68 @@
-<div class="login-form-container">
-  <mat-card class="example-card p-4 border-radius">
-    <mat-card-header>
-      <mat-card-title>
-        <img src="../../../../assets/images/ipl-logo.png" height="50px" alt="">
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="p-3">
-      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
-        <div class="form-row">
-          <div class="form-col">
-            <mat-form-field appearance="outline" class="full-width">
-              <input matInput placeholder="Email" type="text" formControlName="email" />
-              <mat-error *ngIf="submitted && loginForm.controls['email'].hasError('required') ">
-                Email is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-          </div>
+<div class="container-xxl">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <mat-card class="py-5 mt-4 rounded-5 shadow overflow-hidden">
+                <div class="strip strip-0"></div>
+                <div class="strip strip-1"></div>
+                <div class="strip strip-2"></div>
+                <div class="bubble bubble-0"></div>
+                <div class="bubble bubble-1"></div>
+                <div class="bubble bubble-2"></div>
+                <mat-card-content class="p-5">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 d-flex flex-column justify-content-center">
+                            <img src="../../../../assets/images/javra.png" width="230" class="position-relative z-3" alt="Javra Software" />
+                            <div class="applications d-flex position-relative z-3 mt-5 mb-4">
+                                <button mat-fab class="me-2">
+                                    <mat-icon class="material-symbols-outlined"> g_translate </mat-icon>
+                                </button>
+                                <button mat-fab class="me-2">
+                                    <mat-icon class="material-symbols-outlined"> data_usage </mat-icon>
+                                </button>
+                                <button mat-fab class="me-2">
+                                    <mat-icon class="material-symbols-outlined"> tab_inactive </mat-icon>
+                                </button>
+                                <button mat-fab class="me-2">
+                                    <mat-icon class="material-symbols-outlined"> pool </mat-icon>
+                                </button>
+                                <button mat-fab>
+                                    <mat-icon class="material-symbols-outlined"> qr_code_scanner </mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-5 offset-lg-1">
+                            <form class="d-flex flex-column" [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+                                <mat-form-field class="input-light" appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput formControlName="email" />
+
+                                    <mat-error *ngIf="submitted && loginForm.controls['email'].hasError('required')"> Email is <strong>required</strong> </mat-error>
+                                </mat-form-field>
+                                <mat-form-field class="input-light" appearance="outline">
+                                    <mat-label>Password</mat-label>
+                                    <input matInput type="password" formControlName="password" />
+                                    <mat-error *ngIf="submitted && loginForm.controls['password'].hasError('required')"> Password is <strong>required</strong> </mat-error>
+                                </mat-form-field>
+                                <mat-error *ngIf="submitted && invalidData">
+                                    <strong> Invalid credentials </strong>
+                                </mat-error>
+
+                                <!-- <mat-checkbox class="mb-3" color="primary">Remember Me</mat-checkbox> -->
+
+                                <div *ngIf="submitted && invalidData">Invalid credentials</div>
+
+                                <button mat-flat-button class="py-4" type="submit" color="primary">Log In</button>
+
+                                <!-- <a class="text-muted mt-4" href="https://www.google.com/" target="_blank">Forgot my Password!</a> -->
+                            </form>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
         </div>
-        <div class="form-row">
-          <div class="form-col">
-            <mat-form-field appearance="outline" class="full-width">
-              <input matInput placeholder="Password" type="password" formControlName="password" />
-              <mat-error *ngIf="
-                  submitted &&
-                  loginForm.controls['password'].hasError('required')
-                ">
-                Password is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-            <mat-error *ngIf="submitted && invalidData">
-              <strong> Invalid credentials </strong>
-            </mat-error>
-          </div>
-        </div>
-        <mat-card-actions>
-          <button mat-flat-button color="primary" type="submit" class="w-100">
-            Log in
-          </button>
-        </mat-card-actions>
-        <small>Not Registered yet? <a routerLink="/register">Sign Up</a></small>
-      </form>
-    </mat-card-content>
-  </mat-card>
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+        <span>Copyright © Javra Software Pvt.Ltd. All Rights Reserved.</span>
+    </div>
 </div>
