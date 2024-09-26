@@ -1,7 +1,7 @@
 version: "3.8"
 services:
-  ams-front:
-    container_name: ams-front
+  accounts-frontend:
+    container_name: accounts-frontend
     build: .
     environment:
       NODE_ENV: production

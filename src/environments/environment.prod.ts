@@ -4,8 +4,8 @@
 
 export const environment = {
     production: true,
-    apiURL: 'https://amsback.javra.com',
-    baseUrl: 'https://amsback.javra.com'
+    apiURL: 'http://localhost:3030/api/v1',
+    baseUrl: 'http://localhost:3030'
 };
 
 /*
